@@ -1,4 +1,4 @@
-name: FreeRDP By prajwal0909
+name: Kral
 
 on: workflow_dispatch
 
@@ -8,21 +8,21 @@ jobs:
 
     runs-on: windows-latest
 
-    timeout-minutes: 9999
+    timeout-minutes: 9999999999
 
     steps:
 
-    - name: Downloading Ngrok.
+    - name: Ngrok İndiriliyor.
 
       run: |
 
         Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
 
-        Invoke-WebRequest https://raw.githubusercontent.com/prajwal0909/FREE-RDP-WINDOWS-SERVER-By-prajwal0909/main/start.bat -OutFile start.bat
+        Invoke-WebRequest https://raw.githubusercontent.com/Emre37destan/Kral/main/start.bat -OutFile start.bat
 
-        Invoke-WebRequest https://raw.githubusercontent.com/prajwal0909/FREE-RDP-WINDOWS-SERVER-By-prajwal0909/main/wallpaper.jpg -OutFile wallpaper.jpg
+        Invoke-WebRequest https://raw.githubusercontent.com/Emre37destan/Kral/main/wallpaper.jpg -OutFile wallpaper.jpg
 
-        Invoke-WebRequest https://raw.githubusercontent.com/prajwal0909/FREE-RDP-WINDOWS-SERVER-By-prajwal0909/main/wallpaper.bat -OutFile wallpaper.bat
+        Invoke-WebRequest https://raw.githubusercontent.com/Emre37destan/Kral/main/wallpaper.bat -OutFile wallpaper.bat
 
     - name: Extracting Ngrok Files.
 
@@ -62,6 +62,6 @@ jobs:
 
       run: | 
 
-        Invoke-WebRequest https://raw.githubusercontent.com/prajwal0909/FREE-RDP-WINDOWS-SERVER-By-prajwal0909/main/loop.ps1 -OutFile loop.ps1
+        Invoke-WebRequest https://raw.githubusercontent.com/Emre37destan/Kral/main/loop.ps1 -OutFile loop.ps1
 
         ./loop.ps1
