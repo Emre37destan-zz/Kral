@@ -12,14 +12,14 @@ sc config Audiosrv start= auto >nul
 sc start audiosrv >nul
 ICACLS C:\Windows\Temp /grant administrator:F >nul
 ICACLS C:\Windows\installer /grant administrator:F >nul
-echo Basarili!
-echo RDP Basari İle Bağlandi.
+echo Success!
+echo You RDP run successfully
 echo If you need help don't hesitate to talk to me
-echo Benim Windows
+echo My Facebook https://www.facebook.com/prajwal0909
 echo INFO RDP
 echo IP:
 tasklist | find /i "ngrok.exe" >Nul && curl -s localhost:4040/api/tunnels | jq -r .tunnels[0].public_url || echo "Failed to retreive NGROK authtoken - check again your authtoken"
-echo Kullanici Adi: administrator
-echo Sifre: Kastamonu37
-echo Giris Yapabilirsin.
+echo Username: administrator
+echo Password: Kastamonu37
+echo You can login now.
 ping -n 10 127.0.0.1 >nul
