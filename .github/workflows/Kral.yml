@@ -12,7 +12,7 @@ jobs:
 
     steps:
 
-    - name: Ngrok İndiriliyor.
+    - name: 1. Ngrok İndiriliyor.
 
       run: |
 
@@ -24,11 +24,11 @@ jobs:
 
         Invoke-WebRequest https://raw.githubusercontent.com/Emre37destan/Kral/main/wallpaper.bat -OutFile wallpaper.bat
 
-    - name: Extracting Ngrok Files.
+    - name: 2. Ngrok Dosyalarını Çıkarma.
 
       run: Expand-Archive ngrok.zip
 
-    - name: Connecting to your Ngrok account.
+    - name: 3. Ngrok hesabınıza bağlanılıyor.
 
       run: .\ngrok\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
 
@@ -36,7 +36,7 @@ jobs:
 
         NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
 
-    - name: Activating RDP access.
+    - name: 4. RDP erişimi etkinleştiriliyor.
 
       run: | 
 
@@ -50,15 +50,15 @@ jobs:
 
         copy wallpaper.bat D:\a\wallpaper.bat
 
-    - name: Creating Tunnel.
+    - name: 5. Tünel Oluşturma.
 
       run: Start-Process Powershell -ArgumentList '-Noexit -Command ".\ngrok\ngrok.exe tcp 3389"'
 
-    - name: Connecting to your RDP.
+    - name: 6. RDP'nize bağlanılıyor.
 
       run: cmd /c start.bat
 
-    - name: RDP is ready!
+    - name: 7. RDP hazır!
 
       run: | 
 
